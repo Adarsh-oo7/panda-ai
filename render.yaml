@@ -1,0 +1,21 @@
+﻿services:
+  - type: web
+    name: Agent-I
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: SETUP_PASSWORD
+        sync: false
+      - key: Agent-I_STATE_DIR
+        value: /data/.Agent-I
+      - key: Agent-I_WORKSPACE_DIR
+        value: /data/workspace
+      - key: Agent-I_GATEWAY_TOKEN
+        generateValue: true
+    disk:
+      name: Agent-I-data
+      mountPath: /data
+      sizeGB: 1
