@@ -106,7 +106,7 @@ export async function startGatewayBonjourAdvertiser(
   const instanceName =
     typeof opts.instanceName === "string" && opts.instanceName.trim()
       ? opts.instanceName.trim()
-      : `${hostname} (OpenClaw)`;
+      : `${hostname} (Agent-I)`;
   const displayName = prettifyInstanceName(instanceName);
 
   const txtBase: Record<string, string> = {

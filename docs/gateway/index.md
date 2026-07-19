@@ -77,10 +77,10 @@ Default mode is `gateway.reload.mode="hybrid"`.
 
 ### Port and bind precedence
 
-| Setting      | Resolution order                                              |
-| ------------ | ------------------------------------------------------------- |
+| Setting      | Resolution order                                             |
+| ------------ | ------------------------------------------------------------ |
 | Gateway port | `--port` → `Agent-I_GATEWAY_PORT` → `gateway.port` → `18789` |
-| Bind mode    | CLI/override → `gateway.bind` → `loopback`                    |
+| Bind mode    | CLI/override → `gateway.bind` → `loopback`                   |
 
 ### Hot reload modes
 

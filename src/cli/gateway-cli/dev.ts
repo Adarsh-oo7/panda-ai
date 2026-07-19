@@ -16,7 +16,8 @@ const DEV_AGENT_WORKSPACE_SUFFIX = "dev";
 async function loadDevTemplate(name: string, fallback: string): Promise<string> {
   try {
     const templateDir = await resolveWorkspaceTemplateDir();
-    const raw = await fs.promises.readFile(path.join(templateDir, name), "utf-8");
+    // Strip UTF-8 BOM (\uFEFF) that Windows editors may prepend.
+    const raw = (await fs.promises.readFile(path.join(templateDir, name), "utf-8")).replace(/^\uFEFF/, "");
     if (!raw.startsWith("---")) {
       return raw;
     }

@@ -439,8 +439,8 @@ Agent-I pairing list feishu
 
 ## Gateway management commands
 
-| Command                    | Description                   |
-| -------------------------- | ----------------------------- |
+| Command                   | Description                   |
+| ------------------------- | ----------------------------- |
 | `Agent-I gateway status`  | Show gateway status           |
 | `Agent-I gateway install` | Install/start gateway service |
 | `Agent-I gateway stop`    | Stop gateway service          |

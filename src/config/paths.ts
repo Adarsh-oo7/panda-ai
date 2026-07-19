@@ -28,9 +28,7 @@ const LEGACY_CONFIG_FILENAMES = ["clawdbot.json", "moldbot.json", "moltbot.json"
  * Migrate state directory from a legacy path to the new .agenti path.
  * Runs once on startup; safe to call multiple times (no-op if already migrated).
  */
-export function migrateStateDirIfNeeded(
-  homedir: () => string = () => os.homedir(),
-): void {
+export function migrateStateDirIfNeeded(homedir: () => string = () => os.homedir()): void {
   const home = homedir();
   const newDir = path.join(home, NEW_STATE_DIRNAME);
   if (fs.existsSync(newDir)) {
@@ -38,12 +36,13 @@ export function migrateStateDirIfNeeded(
     return;
   }
   // Find the first existing legacy dir to migrate from.
-  const legacySource = LEGACY_STATE_DIRNAMES
-    .map((name) => path.join(home, name))
-    .find((dir) => {
-      try { return fs.existsSync(dir); }
-      catch { return false; }
-    });
+  const legacySource = LEGACY_STATE_DIRNAMES.map((name) => path.join(home, name)).find((dir) => {
+    try {
+      return fs.existsSync(dir);
+    } catch {
+      return false;
+    }
+  });
   if (!legacySource) {
     // No legacy dir found — fresh install, no migration needed.
     return;

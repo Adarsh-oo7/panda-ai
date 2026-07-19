@@ -97,16 +97,16 @@ Both resolve from process env at activation time. SecretRef details are document
 
 ## Path-related env vars
 
-| Variable               | Purpose                                                                                                                                                                          |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Variable              | Purpose                                                                                                                                                                        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `Agent-I_HOME`        | Override the home directory used for all internal path resolution (`~/.Agent-I/`, agent dirs, sessions, credentials). Useful when running Agent-I as a dedicated service user. |
-| `Agent-I_STATE_DIR`   | Override the state directory (default `~/.Agent-I`).                                                                                                                            |
+| `Agent-I_STATE_DIR`   | Override the state directory (default `~/.Agent-I`).                                                                                                                           |
 | `Agent-I_CONFIG_PATH` | Override the config file path (default `~/.Agent-I/Agent-I.json`).                                                                                                             |
 
 ## Logging
 
-| Variable             | Purpose                                                                                                                                                                                      |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Variable            | Purpose                                                                                                                                                                                      |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Agent-I_LOG_LEVEL` | Override log level for both file and console (e.g. `debug`, `trace`). Takes precedence over `logging.level` and `logging.consoleLevel` in config. Invalid values are ignored with a warning. |
 
 ### `Agent-I_HOME`

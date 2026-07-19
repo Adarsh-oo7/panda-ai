@@ -12,6 +12,7 @@ import {
   sanitizeUserFacingText,
 } from "../../agents/pi-embedded-helpers.js";
 import { runEmbeddedPiAgent } from "../../agents/pi-embedded.js";
+import { replaceCliName } from "../../cli/cli-name.js";
 import {
   resolveGroupSessionKey,
   resolveSessionTranscriptPath,
@@ -575,7 +576,7 @@ export async function runAgentTurnWithFallback(params: {
         ? "⚠️ Context overflow — prompt too large for this model. Try a shorter message or a larger-context model."
         : isRoleOrderingError
           ? "⚠️ Message ordering conflict - please try again. If this persists, use /new to start a fresh session."
-          : `⚠️ Agent failed before reply: ${trimmedMessage}.\nLogs: openclaw logs --follow`;
+          : `⚠️ Agent failed before reply: ${trimmedMessage}.\nLogs: ${replaceCliName("openclaw logs --follow")}`;
 
       return {
         kind: "final",

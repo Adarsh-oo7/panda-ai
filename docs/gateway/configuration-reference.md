@@ -1654,7 +1654,7 @@ Local onboarding defaults new local configs to `tools.profile: "messaging"` when
 | `group:automation` | `cron`, `gateway`                                                                        |
 | `group:messaging`  | `message`                                                                                |
 | `group:nodes`      | `nodes`                                                                                  |
-| `group:Agent-I`   | All built-in tools (excludes provider plugins)                                           |
+| `group:Agent-I`    | All built-in tools (excludes provider plugins)                                           |
 
 ### `tools.allow` / `tools.deny`
 

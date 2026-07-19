@@ -15,11 +15,13 @@ It started as a fork of the Agent-I open-source project and has been rebranded a
 ### Current Focus
 
 **Priority:**
+
 - Security and safe defaults
 - Bug fixes and stability
 - Setup reliability and first-run UX
 
 **Next priorities:**
+
 - Supporting all major model providers
 - Improving support for major messaging channels
 - Performance and test infrastructure

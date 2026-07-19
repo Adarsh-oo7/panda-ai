@@ -1337,9 +1337,9 @@ Related: [Agent workspace](/concepts/agent-workspace), [Memory](/concepts/memory
 
 Everything lives under `$Agent-I_STATE_DIR` (default: `~/.Agent-I`):
 
-| Path                                                            | Purpose                                                            |
-| --------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `$Agent-I_STATE_DIR/Agent-I.json`                             | Main config (JSON5)                                                |
+| Path                                                           | Purpose                                                            |
+| -------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `$Agent-I_STATE_DIR/Agent-I.json`                              | Main config (JSON5)                                                |
 | `$Agent-I_STATE_DIR/credentials/oauth.json`                    | Legacy OAuth import (copied into auth profiles on first use)       |
 | `$Agent-I_STATE_DIR/agents/<agentId>/agent/auth-profiles.json` | Auth profiles (OAuth, API keys, and optional `keyRef`/`tokenRef`)  |
 | `$Agent-I_STATE_DIR/secrets.json`                              | Optional file-backed secret payload for `file` SecretRef providers |

@@ -1,0 +1,9 @@
+{
+  "name": "agenti-gmail",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Gmail CLI for Agent-I (Windows)",
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}

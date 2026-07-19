@@ -1,5 +1,5 @@
 pnpm gateway:watch
- pnpm agenti channels login --channel whatsapp --account work
+pnpm agenti channels login --channel whatsapp --account work
 
 
 pnpm agenti channels add --channel telegram --token <YOUR_TELEGRAM_BOT_TOKEN>

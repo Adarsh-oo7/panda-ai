@@ -181,7 +181,9 @@ function shouldPreferInlineLineValue(params: {
 }
 
 function extractFrontmatterBlock(content: string): string | undefined {
-  const normalized = content.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  // Strip UTF-8 BOM (\uFEFF) that some editors (e.g. Notepad, VS Code on Windows)
+  // prepend, which would otherwise prevent the "---" frontmatter check from matching.
+  const normalized = content.replace(/^\uFEFF/, "").replace(/\r\n/g, "\n").replace(/\r/g, "\n");
   if (!normalized.startsWith("---")) {
     return undefined;
   }

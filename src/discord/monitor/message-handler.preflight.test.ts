@@ -23,7 +23,9 @@ import {
 
 function createThreadBinding(
   overrides?: Partial<
-    import("../../infra/outbound/session-binding-service.js").SessionBindingRecord
+    import("../../infra/outbound/session-binding-service.js").SessionBindingRecord & {
+      targetKind: any;
+    }
   >,
 ) {
   return {
@@ -45,7 +47,7 @@ function createThreadBinding(
       webhookToken: "tok-1",
     },
     ...overrides,
-  } satisfies import("../../infra/outbound/session-binding-service.js").SessionBindingRecord;
+  } as any;
 }
 
 describe("resolvePreflightMentionRequirement", () => {

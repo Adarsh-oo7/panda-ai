@@ -41,6 +41,19 @@ if (
   // Imported as a dependency — skip all entry-point side effects.
 } else {
   process.title = "agenti";
+  if (process.env.OPENCLAW_WATCH_MODE === "1" && process.ppid) {
+    const parentPid = process.ppid;
+    const watchdog = setInterval(() => {
+      try {
+        process.kill(parentPid, 0);
+      } catch (err) {
+        if ((err as { code?: string }).code === "ESRCH") {
+          process.exit(0);
+        }
+      }
+    }, 1000);
+    watchdog.unref();
+  }
   installProcessWarningFilter();
   normalizeEnv();
   if (!isTruthyEnvValue(process.env.NODE_DISABLE_COMPILE_CACHE)) {

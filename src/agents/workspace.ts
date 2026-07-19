@@ -88,15 +88,17 @@ async function readWorkspaceFileWithGuards(params: {
 }
 
 function stripFrontMatter(content: string): string {
-  if (!content.startsWith("---")) {
-    return content;
+  // Strip UTF-8 BOM (\uFEFF) that Windows editors may prepend.
+  const stripped = content.replace(/^\uFEFF/, "");
+  if (!stripped.startsWith("---")) {
+    return stripped;
   }
-  const endIndex = content.indexOf("\n---", 3);
+  const endIndex = stripped.indexOf("\n---", 3);
   if (endIndex === -1) {
-    return content;
+    return stripped;
   }
   const start = endIndex + "\n---".length;
-  let trimmed = content.slice(start);
+  let trimmed = stripped.slice(start);
   trimmed = trimmed.replace(/^\s+/, "");
   return trimmed;
 }
